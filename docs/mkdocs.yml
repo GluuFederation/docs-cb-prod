@@ -1,0 +1,35 @@
+# Project information
+site_name: Gluu Server Couchbase Integration Guide
+site_description: Documentation for integrating Couchbase with the Gluu Server
+
+# Copyright
+copyright: Copyright &copy; 2019, Gluu, Inc.
+
+# Repository
+docs_dir: source
+repo_name: GluuFederation/docs-cb-prod
+repo_url: https://github.com/GluuFederation/docs-cb-prod/
+edit_uri: edit/master/docs/source
+
+# Configuration
+theme: 
+    name: material
+    palette:
+        primary: 'green'
+        accent: 'green'
+    logo: 'gluu.jpg'
+    favicon: 'favicon.ico'
+extra:
+    version: '4.0'
+    
+# Extensions
+markdown_extensions:
+- admonition
+- toc:
+     permalink: '#'
+- codehilite     
+- pymdownx.superfences
+
+# Navigation
+nav:
+- 
