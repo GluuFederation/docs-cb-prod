@@ -1,14 +1,24 @@
 # Installing Couchbase
+## Overview
 
-## Local Couchbase Installation
+In Gluu 4.0, Couchbase Enterprise Edition (EE) can be used as a database backend. There are two supported deployment strategies: 
 
-Starting in CE 4.0, Gluu Server supports Couchbase Server as a database backend. To install with Couchbase, you need to download the OS-specific Couchbase package from https://www.couchbase.com/downloads (Enterprise version only), and save to `/opt/dist/couchbase`.
+- Local Couchbase installation, where both Gluu and Couchbase are residing on the same server; and,
 
-## Remote Couchbase Installation
+- Remote Couchbase installation, where Couchbase is on its own dedicated server(s). This strategy is recommended for production scenarios. 
 
-These instructions currently use CentOS7 VMs for Gluu Server 4.0 and Couchbase.  
+## Local Couchbase installation
 
-### Couchbase installation and configuration
+To install a Gluu Server with a local instance of Couchbase, download the OS-specific Couchbase package from https://www.couchbase.com/downloads and save it inside your Gluu Server chroot to `/opt/dist/couchbase`.
+
+## Remote Couchbase installation
+
+To setup your Gluu Server to leverage a remote Couchbase Server, following the instructions below. 
+
+!!! Note
+    These instructions assume both Gluu and Couchbase are installed on VM's running CentOS 7.x. 
+
+### Install and configure Couchbase
 
 - Prepare your VM with: 
   - 16GB physical memory
@@ -19,7 +29,7 @@ These instructions currently use CentOS7 VMs for Gluu Server 4.0 and Couchbase.
     ![image](../img/4.0/Remote_CB/CB_remote_one.PNG)
     ![image](../img/4.0/Remote_CB/CB_remote_two.PNG)
 
-### Gluu Server installation and configuration
+### Install and configure Gluu
 
 - Grab Gluu Server 4.0 RC 
 - Install rpm, don't run 'setup.py' yet. 
