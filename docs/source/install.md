@@ -8,18 +8,18 @@ Starting in CE 4.0, Gluu Server supports Couchbase Server as a database backend.
 
 These instructions currently use CentOS7 VMs for Gluu Server 4.0 and Couchbase.  
 
-### CB installation and configuration
+### Couchbase installation and configuration
 
-- Prepare your VM according to CB requirements
-  - 8GB physical memory
+- Prepare your VM with: 
+  - 16GB physical memory
   - 4 core CPU 
-- Install Couchbase software. 
-- Make sure to modify firewall according to Couchbase requirement: https://docs.couchbase.com/server/current/install/install-ports.html
-- After completion of installation, move forward to setup your base Couchbase software. Here are couple of screenshots attached from our test setup. 
+- Install Couchbase 
+- Modify firewalls according to Couchbase requirements: https://docs.couchbase.com/server/current/install/install-ports.html
+- Configure your Couchbase deployment. Here are couple of screenshots attached from our test setup. 
     ![image](../img/4.0/Remote_CB/CB_remote_one.PNG)
     ![image](../img/4.0/Remote_CB/CB_remote_two.PNG)
 
-### Gluu Server ( CE ) installation and configuration
+### Gluu Server installation and configuration
 
 - Grab Gluu Server 4.0 RC 
 - Install rpm, don't run 'setup.py' yet. 
