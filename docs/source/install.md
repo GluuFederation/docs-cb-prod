@@ -26,8 +26,8 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
 - Install Couchbase 
 - Modify firewalls according to Couchbase requirements: https://docs.couchbase.com/server/current/install/install-ports.html
 - Configure your Couchbase deployment. Here are couple of screenshots attached from our test setup. 
-    ![image](../img/4.0/Remote_CB/CB_remote_one.PNG)
-    ![image](../img/4.0/Remote_CB/CB_remote_two.PNG)
+    ![image](../img/CB_remote_one.PNG)
+    ![image](../img/CB_remote_two.PNG)
 
 ### Install and configure Gluu
 
@@ -48,7 +48,7 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
 - Test WebUI login
 - A successful Couchbase bucket will look like below: 
  
-    ![image](../img/4.0/Remote_CB/CB_remote_successful_bucket.PNG)
+    ![image](../img/CB_remote_successful_bucket.PNG)
  
 - Check if all Gluu Server bits are running properly or not ( identity/oxauth/idp/httpd etc. ) 
 - Check logs for any error. 
