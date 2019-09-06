@@ -16,7 +16,7 @@ To install a Gluu Server with a local instance of Couchbase, download the OS-spe
 To setup your Gluu Server to leverage a remote Couchbase Server, following the instructions below. 
 
 !!! Note
-    These instructions assume both Gluu and Couchbase are installed on VM's running CentOS 7.x. 
+    These instructions assume both Gluu and Couchbase are installed on VMs running CentOS 7.x. 
 
 ### Install and configure Couchbase
 
@@ -31,12 +31,12 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
 
 ### Install and configure Gluu
 
-- Grab Gluu Server 4.0 RC 
-- Install rpm, don't run 'setup.py' yet. 
+- Install the latest [Gluu Server 4.0 RC](https://gluu.org/docs/ce/install-centos) 
+- Install the package, but don't run 'setup.py' yet. 
 - After completion of rpm installation: 
-  - `/sbin/gluu-serverd-4.0 enable`
-  - `/sbin/gluu-serverd-4.0 start`
-  - `/sbin/gluu-serverd-4.0 login`
+  - `/sbin/gluu-serverd enable`
+  - `/sbin/gluu-serverd start`
+  - `/sbin/gluu-serverd login`
   - `cd /install/community-edition-setup/`
   - `wget https://raw.githubusercontent.com/GluuFederation/community-edition-setup/master/setup.py -O /install/community-edition-setup/setup.py`
   - `python setup.py --remote-couchbase`
