@@ -11,22 +11,23 @@ These instructions currently use CentOS7 VMs for Gluu Server 4.0 and Couchbase.
 ### CB installation and configuration
 
 - Prepare your VM according to CB requirements
-  - 8GB physical memory
+  -  16GB physical memory
   - 4 core CPU 
 - Install Couchbase software. 
 - Make sure to modify firewall according to Couchbase requirement: https://docs.couchbase.com/server/current/install/install-ports.html
 - After completion of installation, move forward to setup your base Couchbase software. Here are couple of screenshots attached from our test setup. 
-    ![image](../img/4.0/Remote_CB/CB_remote_one.PNG)
+
+    ![image](../img/Remote_CB/CB_remote_one.PNG)
     ![image](../img/4.0/Remote_CB/CB_remote_two.PNG)
 
 ### Gluu Server ( CE ) installation and configuration
 
-- Grab Gluu Server 4.0 RC 
-- Install rpm, don't run 'setup.py' yet. 
+- Install 
+- Install the package, but don't run 'setup.py' yet. 
 - After completion of rpm installation: 
-  - `/sbin/gluu-serverd-4.0 enable`
-  - `/sbin/gluu-serverd-4.0 start`
-  - `/sbin/gluu-serverd-4.0 login`
+  - `/sbin/gluu-serverd enable`
+  - `/sbin/gluu-serverd start`
+  - `/sbin/gluu-serverd login`
   - `cd /install/community-edition-setup/`
   - `wget https://raw.githubusercontent.com/GluuFederation/community-edition-setup/master/setup.py -O /install/community-edition-setup/setup.py`
   - `python setup.py --remote-couchbase`
@@ -38,7 +39,7 @@ These instructions currently use CentOS7 VMs for Gluu Server 4.0 and Couchbase.
 - Test WebUI login
 - A successful Couchbase bucket will look like below: 
  
-    ![image](../img/4.0/Remote_CB/CB_remote_successful_bucket.PNG)
+    ![image](../img/CB_remote_successful_bucket.PNG)
  
 - Check if all Gluu Server bits are running properly or not ( identity/oxauth/idp/httpd etc. ) 
 - Check logs for any error. 
