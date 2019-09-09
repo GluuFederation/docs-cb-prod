@@ -7,9 +7,6 @@ In Gluu 4.0, Couchbase Enterprise Edition (EE) can be used as a database backend
 
 - Local Couchbase installation, where both Gluu and Couchbase are residing on the same server(s).
 
-## License
-
-Couchbase Enterprise Edition, and the corresponding integration with Gluu, is commercially licensed software. To discuss licensing, please [schedule a call with us](https://gluu.org/booking). 
 
 ## Local Couchbase installation
 
@@ -87,3 +84,8 @@ Use Gluu OpenDj to store (1) default (2) user (3) cache (4) statistic (5) site :
 ```
 
 In this example, both OpenDJ and Couchbase will be used for storing data. Default storage (system configurations, attributes, clients, etc.) will be OpenDJ and also metric data (statistic) will be stored in OpenDJ. Other data will be stored in Couchbase server.
+
+
+## License
+
+Couchbase Enterprise Edition, and the corresponding integration with Gluu, is commercially licensed software. To discuss licensing, please [schedule a call with us](https://gluu.org/booking). 
