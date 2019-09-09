@@ -7,6 +7,10 @@ In Gluu 4.0, Couchbase Enterprise Edition (EE) can be used as a database backend
 
 - Local Couchbase installation, where both Gluu and Couchbase are residing on the same server(s).
 
+## License
+
+Couchbase Enterprise Edition, and the corresponding integration with Gluu, is commercially licensed software. To discuss licensing, please [schedule a call with us](https://gluu.org/booking). 
+
 ## Local Couchbase installation
 
 To install a Gluu Server with a local instance of Couchbase, download the OS-specific Couchbase package from https://www.couchbase.com/downloads and save it inside your Gluu Server chroot to `/opt/dist/couchbase`.
