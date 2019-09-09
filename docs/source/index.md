@@ -51,10 +51,6 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
     ```
     
     ```
-    wget https://raw.githubusercontent.com/GluuFederation/community-edition-setup/master/setup.py -O /install/community-edition-setup/setup.py
-    ```
-    
-    ```
     python setup.py --remote-couchbase
     ```
     
