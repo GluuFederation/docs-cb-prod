@@ -33,15 +33,33 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
 
 - Install the latest [Gluu Server 4.0 RC](https://gluu.org/docs/ce/install-centos) 
 - Install the package, but don't run 'setup.py' yet. 
-- After completion of rpm installation: 
-  - `/sbin/gluu-serverd enable`
-  - `/sbin/gluu-serverd start`
-  - `/sbin/gluu-serverd login`
-  - `cd /install/community-edition-setup/`
-  - `wget https://raw.githubusercontent.com/GluuFederation/community-edition-setup/master/setup.py -O /install/community-edition-setup/setup.py`
-  - `python setup.py --remote-couchbase`
-     - Setup.py script will ask couple of questions, along with hostname ( we used IP address ), Administrative username ( we used 'admin' ) and password for that administrative user. 
-     - Complete installation. 
+- After package installation, run these commands: 
+    ```
+    /sbin/gluu-serverd enable
+    ```
+    
+    ```
+    /sbin/gluu-serverd start
+    ```
+    
+    ```
+    /sbin/gluu-serverd login
+    ```
+    
+    ```
+    cd /install/community-edition-setup/
+    ```
+    
+    ```
+    wget https://raw.githubusercontent.com/GluuFederation/community-edition-setup/master/setup.py -O /install/community-edition-setup/setup.py
+    ```
+    
+    ```
+    python setup.py --remote-couchbase
+    ```
+    
+- The setup script will ask some questions, along with hostname ( we used IP address ), Administrative username (we used 'admin') and password for that administrative user. 
+- Complete installation. 
 
 ### Test
 
