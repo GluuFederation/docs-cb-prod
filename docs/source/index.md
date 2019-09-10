@@ -1,25 +1,29 @@
 # Installing Couchbase
 ## Overview
 
-In Gluu 4.0, Couchbase Enterprise Edition (EE) can be used as a database backend. There are two supported deployment strategies: 
+In Gluu 4.0, Couchbase Enterprise Edition (EE) can be used as a database backend. 
+
+## Installation
+
+There are two supported deployment strategies: 
 
 - Remote Couchbase installation, where Couchbase is on its own dedicated server(s). This is the recommended strategy for production scenarios. 
 
 - Local Couchbase installation, where both Gluu and Couchbase are residing on the same server(s).
 
 
-## Local Couchbase installation
+### Local installation
 
 To install a Gluu Server with a local instance of Couchbase, download the OS-specific Couchbase package from https://www.couchbase.com/downloads and save it inside your Gluu Server chroot to `/opt/dist/couchbase`.
 
-## Remote Couchbase installation
+### Remote installation
 
 To setup your Gluu Server to leverage a remote Couchbase Server, following the instructions below. 
 
 !!! Note
     These instructions assume both Gluu and Couchbase are installed on VMs running CentOS 7.x. 
 
-### Install and configure Couchbase
+#### Install and configure Couchbase
 
 - Prepare your VM with: 
   - 16GB physical memory
@@ -27,13 +31,15 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
 - Install Couchbase 
 - Modify firewalls according to Couchbase requirements: https://docs.couchbase.com/server/current/install/install-ports.html
 - Configure your Couchbase deployment. Here are couple of screenshots attached from our test setup. 
+
     ![image](./img/CB_remote_one.PNG)
+
     ![image](./img/CB_remote_two.PNG)
 
-### Install and configure Gluu
+#### Install and configure Gluu
 
-- Install the latest [Gluu Server 4.0 RC](https://gluu.org/docs/ce/install-centos) 
-- Install the package, but don't run 'setup.py' yet. 
+- Install the latest [Gluu Server 4.0 RC](https://gluu.org/docs/ce/4.0/installation-guide/install/) 
+- Install the package, but don't run `setup.py` yet. 
 - After package installation, run these commands: 
     ```
     /sbin/gluu-serverd enable
