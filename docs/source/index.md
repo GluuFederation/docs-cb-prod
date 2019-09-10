@@ -7,10 +7,9 @@ In Gluu 4.0, Couchbase Enterprise Edition (EE) can be used as a database backend
 
 There are two supported deployment strategies: 
 
-- Remote Couchbase installation, where Couchbase is on its own dedicated server(s). This is the recommended strategy for production scenarios. 
+- [Local Couchbase installation](#local-installation), where both Gluu and Couchbase are residing on the same servers. OK for basic testing. 
 
-- Local Couchbase installation, where both Gluu and Couchbase are residing on the same server(s).
-
+- [Remote Couchbase installation](#remote-installation), where Couchbase is on its own dedicated servers. Recommended for performance testing and production scenarios. 
 
 ### Local installation
 
