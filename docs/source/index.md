@@ -19,9 +19,6 @@ To install a Gluu Server with a local instance of Couchbase, download your prefe
 
 To setup your Gluu Server to leverage a remote Couchbase Server, following the instructions below. 
 
-!!! Note
-    These instructions assume both Gluu and Couchbase are installed on VMs running CentOS 7.x. 
-
 #### Install and configure Couchbase
 
 - Prepare a VM with 16GB physical memory and 4 core CPU 
@@ -37,33 +34,35 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
 
 - Install [Gluu Server 4.0](https://gluu.org/docs/ce/4.0/installation-guide/install/), but **do not** run `setup.py` yet. 
 - After package installation, run these commands: 
-    ```
+   
+    ```tab="Ubuntu 18, RHEL 7, Debian 9, or CentOS 7"
     /sbin/gluu-serverd enable
-    ```
-    
-    ```
+
     /sbin/gluu-serverd start
-    ```
-    
-    ```
+   
     /sbin/gluu-serverd login
-    ```
-    
-    ```
+   
     cd /install/community-edition-setup/
-    ```
-    
-    ```
+   
     python setup.py --remote-couchbase
     ```
     
-- The setup script will ask some questions, along with hostname ( we used IP address ), Administrative username (we used `admin`) and password for that administrative user. 
+    ```tab="Ubuntu 16"
+    service gluu-server start
+    
+    service gluu-server login
+    
+    cd /install/community-edition-setup/
+    
+    ./setup.py --remote-couchbase
+    
+- The setup script will ask some questions, along with the hostname (we used the IP address), Administrative username (we used `admin`) and password for that administrative user. 
 - Complete installation. 
 
 ### Test
 
 - Test WebUI login
-- A successful Couchbase bucket will look like below: 
+- A successful Couchbase bucket will look like this: 
  
     ![image](./img/CB_remote_successful_bucket.PNG)
  
