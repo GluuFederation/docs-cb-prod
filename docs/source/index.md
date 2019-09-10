@@ -25,9 +25,7 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
 
 #### Install and configure Couchbase
 
-- Prepare your VM with: 
-  - 16GB physical memory
-  - 4 core CPU 
+- Prepare a VM with 16GB physical memory and 4 core CPU 
 - [Install Couchbase](https://www.couchbase.com/downloads)
 - Modify firewalls according to [Couchbase requirements](https://docs.couchbase.com/server/current/install/install-ports.html)
 - Configure your Couchbase deployment. Here are couple of screenshots attached from our test setup. 
