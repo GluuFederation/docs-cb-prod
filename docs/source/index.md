@@ -14,7 +14,7 @@ There are two supported deployment strategies:
 
 ### Local installation
 
-To install a Gluu Server with a local instance of Couchbase, download the OS-specific Couchbase package from https://www.couchbase.com/downloads and save it inside your Gluu Server chroot to `/opt/dist/couchbase`.
+To install a Gluu Server with a local instance of Couchbase, download your preferred [Couchbase package](https://www.couchbase.com/downloads) and save it inside your Gluu Server chroot to `/opt/dist/couchbase`.
 
 ### Remote installation
 
@@ -28,8 +28,8 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
 - Prepare your VM with: 
   - 16GB physical memory
   - 4 core CPU 
-- Install Couchbase 
-- Modify firewalls according to Couchbase requirements: https://docs.couchbase.com/server/current/install/install-ports.html
+- [Install Couchbase](https://www.couchbase.com/downloads)
+- Modify firewalls according to [Couchbase requirements](https://docs.couchbase.com/server/current/install/install-ports.html)
 - Configure your Couchbase deployment. Here are couple of screenshots attached from our test setup. 
 
     ![image](./img/CB_remote_one.PNG)
@@ -38,8 +38,7 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
 
 #### Install and configure Gluu
 
-- Install the latest [Gluu Server 4.0 RC](https://gluu.org/docs/ce/4.0/installation-guide/install/) 
-- Install the package, but don't run `setup.py` yet. 
+- Install [Gluu Server 4.0](https://gluu.org/docs/ce/4.0/installation-guide/install/), but **do not** run `setup.py` yet. 
 - After package installation, run these commands: 
     ```
     /sbin/gluu-serverd enable
@@ -61,7 +60,7 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
     python setup.py --remote-couchbase
     ```
     
-- The setup script will ask some questions, along with hostname ( we used IP address ), Administrative username (we used 'admin') and password for that administrative user. 
+- The setup script will ask some questions, along with hostname ( we used IP address ), Administrative username (we used `admin`) and password for that administrative user. 
 - Complete installation. 
 
 ### Test
