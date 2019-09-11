@@ -15,9 +15,10 @@ There are two supported deployment strategies:
 
 To install a Gluu Server with a local instance of Couchbase: 
 
- - Just complete rpm/deb installation, don't run `install.py` yet. 
+ - Install the [Gluu Server 4.0](https://gluu.org/docs/ce/4.0/installation-guide/install/) packages, don't run `setup.py` yet. 
+ - Start the `gluu-server` service and log in to the Gluu Server chroot
  - Download your preferred [Couchbase package](https://www.couchbase.com/downloads) and save it inside your Gluu Server chroot to `/opt/dist/couchbase`.
- - Move forward with `installl.py` procedure. 
+ - Run setup.py to configure the Gluu Server.
 
 ### Remote installation
 
