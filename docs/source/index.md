@@ -15,6 +15,7 @@ There are two supported deployment strategies:
 
 To install a Gluu Server with a local instance of Couchbase: 
 
+ - Prepare a VM with 16GB of RAM, 4 CPU cores, and 40 GB of disk space. 
  - Install the [Gluu Server 4.0](https://gluu.org/docs/ce/4.0/installation-guide/install/) packages, don't run `setup.py` yet. 
  - Start the `gluu-server` service and log in to the Gluu Server chroot
  - Download your preferred [Couchbase package](https://www.couchbase.com/downloads) and save it inside your Gluu Server chroot to `/opt/dist/couchbase`.
