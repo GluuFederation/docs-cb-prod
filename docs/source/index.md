@@ -29,7 +29,7 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
 
 - Prepare a VM with 16GB physical memory and 4 core CPU 
 - [Install Couchbase](https://docs.couchbase.com/server/current/install/get-started.html)
-- Modify firewalls according to [Couchbase requirements](https://docs.couchbase.com/server/current/install/install-ports.html)
+- Modify the VM firewalls according to [Couchbase requirements](https://docs.couchbase.com/server/current/install/install-ports.html)
 - Configure your Couchbase deployment. Here are couple of screenshots attached from our test setup. 
 
     ![image](./img/CB_remote_one.PNG)
@@ -63,7 +63,7 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
     ./setup.py --remote-couchbase
     ```
     
-- The setup script will ask some questions, along with the hostname (we used the IP address), Administrative username (we used `admin`) and password for that administrative user. The password set for Couchbase will be automatically assigned to be the oxTrust admin password.
+- The setup script will ask some questions, along with the Couchbase hostname and admin username and password.    
 - Complete installation. 
 
 ### Test
