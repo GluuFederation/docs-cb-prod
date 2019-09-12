@@ -63,7 +63,7 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
     ./setup.py --remote-couchbase
     ```
     
-- The setup script will ask some questions, along with the hostname (we used the IP address), Administrative username (we used `admin`) and password for that administrative user. 
+- The setup script will ask some questions, along with the hostname (we used the IP address), Administrative username (we used `admin`) and password for that administrative user. The password set for Couchbase will be automatically assigned to be the oxTrust admin password.
 - Complete installation. 
 
 ### Test
