@@ -70,9 +70,13 @@ To set up the Gluu Server to leverage a remote Couchbase Server, follow these in
     ./setup.py --remote-couchbase
     ```
     
-- The setup script will ask some questions, along with the Couchbase hostname and admin username and password that were set during initial Couchbase configuration.      
-- Complete installation. 
+- The setup script will add some Couchbase-specific fields to the normal [setup script prompts](https://gluu.org/docs/ce/4.0/installation-guide/setup_py/#setup-prompt):
 
+    - **Couchbase host**: The IP address previously set for Couchbase 
+    - **Couchbase Admin user**: The Admin username to log in to Couchbase
+    - **Couchbase Admin password**: The password to log in to Couchbase - **this is also used to log in to oxTrust**
+    - **Use hybrid backends**: Set this to `yes` to install a local OpenDJ backend, enabling a hybrid configuration
+    
 ### Test
 
 - Test WebUI login
