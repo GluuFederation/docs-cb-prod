@@ -63,7 +63,7 @@ To setup your Gluu Server to leverage a remote Couchbase Server, following the i
     ./setup.py --remote-couchbase
     ```
     
-- The setup script will ask some questions, along with the Couchbase hostname and admin username and password.    
+- The setup script will ask some questions, along with the Couchbase hostname and admin username and password that were set during initial Couchbase configuration.      
 - Complete installation. 
 
 ### Test
