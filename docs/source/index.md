@@ -30,7 +30,7 @@ To install a Gluu Server with a local instance of Couchbase:
 
 ### Remote installation
 
-To setup your Gluu Server to leverage a remote Couchbase Server, following the instructions below. 
+To set up the Gluu Server to leverage a remote Couchbase Server, follow these instructions. 
 
 #### Install and configure Couchbase
 
