@@ -61,4 +61,4 @@ For this entry the following index is created:
 CREATE INDEX gluu_st_1 ON `gluu`(`oxApplicationType`, `oxMetricType`, `oxStartDate`, `oxEndDate`) WHERE objectClass="oxMetric"
 ```
 
-Index name is created as `<bucket_name>_st_#` wher `#` is consecutive number
+Index name is created as `<bucket_name>_st_#` where `#` is consecutive number
