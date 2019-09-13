@@ -72,7 +72,7 @@ To set up the Gluu Server to leverage a remote Couchbase Server, follow these in
 
     - **Couchbase host**: The IP address previously set for Couchbase 
     - **Couchbase Admin user**: The Admin username to log in to Couchbase
-    - **Couchbase Admin password**: The password to log in to Couchbase - **this is also used to log in to oxTrust**
+    - **Couchbase Admin password**: The password to log in to Couchbase - **this is also set to be the oxTrust admin password**
     - **Use hybrid backends**: Set this to `yes` to install a local OpenDJ backend, enabling a hybrid configuration
     
 ### Test
