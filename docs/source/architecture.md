@@ -33,3 +33,32 @@ Users and groups will go to this bucket, initially admin user and admin group wi
 
 
 ### Indexes
+
+Indexes are created according to this json: [index.json](https://github.com/GluuFederation/community-edition-setup/blob/master/static/couchbase/index.json)
+
+`setup.py` creates two types of indexes on buckets:
+
+#### Indexes for attrbiutes
+Gluu services uses attrbiutes to find intended document, hence `setup.py` creates indexes for certain attrbiutes. For example:
+for bucket **gluu_user**, the following index is created for attribute **inum**:
+
+```
+CREATE INDEX gluu_user_inum ON `gluu_user`(`inum`)
+```
+
+Index name is formed by joining bucket name and attrubute name by underscore (`_`)
+
+#### Static Indexes
+For faster retreival of documents, `setup.py` also creates static indexes if necassary. For buket **gluu** we have such an entry in `index.json`:
+
+```
+ [["oxApplicationType", "oxMetricType", "oxStartDate", "oxEndDate"], "objectClass = \"oxMetric\""]
+```
+
+For this entry the following index is created:
+
+```
+CREATE INDEX gluu_st_1 ON `gluu`(`oxApplicationType`, `oxMetricType`, `oxStartDate`, `oxEndDate`) WHERE objectClass="oxMetric"
+```
+
+Index name is created as `<bucket_name>_st_#` wher `#` is consecutive number
