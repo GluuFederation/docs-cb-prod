@@ -85,9 +85,9 @@ To set up the Gluu Server to leverage a remote Couchbase Server, follow these in
 - Check if all Gluu Server bits are running properly or not ( identity/oxauth/idp/httpd etc. ) 
 - Check logs for any error. 
 
-## Hybrid Couchbase / OpenDJ Installation
+## Hybrid backend
 
-If both Couchbase and OpenDJ (either locally or remote) are available, you will be asked if you want to use hybrid backends:
+If both Couchbase and OpenDJ are available (either locally or remote), you will be asked if you want to use hybrid backends:
 
 ```
 Install (1) Gluu OpenDj (2) Couchbase (3) Hybrid [1|2|3] [1] : 3
@@ -100,7 +100,7 @@ See /opt/couchbase/LICENSE.txt.
 Use Gluu OpenDj to store (1) default (2) user (3) cache (4) statistic (5) site : 14
 ```
 
-In this example, both OpenDJ and Couchbase will be used for storing data. Default storage (system configurations, attributes, clients, etc.) will be OpenDJ and also metric data (statistic) will be stored in OpenDJ. Other data will be stored in Couchbase server.
+In this example, both OpenDJ and Couchbase will be used for storing specific data. Default storage will be persisted in OpenDJ, e.g. system configurations, attributes, clients, metrics, etc., while all other data will be stored in Couchbase.
 
 ## Data Structure
 
