@@ -118,11 +118,54 @@ This is the default bucket for the Gluu Server, the following documents will be 
   - metric (statistic) documents will be inserted to this bucket 
 
 #### gluu_cache
+ we use only with cache_type: NATIVE_PERSISTANCE.
+
+Here is sample entry:
+```
+{
+  "dat": "rO0ABXNyACZvcmcuZ2x1dS5veGF1dGgubW9kZWwuY29tbW9uLlNlc3Npb25JZPy0UHYpOy4WAgAOTAASYXV0aGVudGljYXRpb25UaW1ldAAQTGphdmEvdXRpbC9EYXRlO0wAAmRudAASTGphdmEvbGFuZy9TdHJpbmc7TAACaWRxAH4AAkwAD2ludm9sdmVkQ2xpZW50c3QAMUxvcmcvZ2x1dS9veGF1dGgvbW9kZWwvY29tbW9uL1Nlc3Npb25JZEFjY2Vzc01hcDtMAAVpc0p3dHQAE0xqYXZhL2xhbmcvQm9vbGVhbjtMAANqd3RxAH4AAkwACmxhc3RVc2VkQXRxAH4AAUwAEXBlcm1pc3Npb25HcmFudGVkcQB+AARMABRwZXJtaXNzaW9uR3JhbnRlZE1hcHEAfgADTAARc2Vzc2lvbkF0dHJpYnV0ZXN0AA9MamF2YS91dGlsL01hcDtMAAxzZXNzaW9uU3RhdGVxAH4AAkwABXN0YXRldAAtTG9yZy9nbHV1L294YXV0aC9tb2RlbC9jb21tb24vU2Vzc2lvbklkU3RhdGU7TAAEdXNlcnQAI0xvcmcvZ2x1dS9veGF1dGgvbW9kZWwvY29tbW9uL1VzZXI7TAAGdXNlckRucQB+AAJ4cHNyAA5qYXZhLnV0aWwuRGF0ZWhqgQFLWXQZAwAAeHB3CAAAAW1Je/50eHQAJDE2OTJhYTQ0LTBkYTctNDQ5Yi05NDA1LTllZDlhZDMyZmFhY3EAfgALcHNyABFqYXZhLmxhbmcuQm9vbGVhbs0gcoDVnPruAgABWgAFdmFsdWV4cABwc3EAfgAJdwgAAAFtSXv+dHhwc3IAL29yZy5nbHV1Lm94YXV0aC5tb2RlbC5jb21tb24uU2Vzc2lvbklkQWNjZXNzTWFwea8dEgakD6MCAAFMABFwZXJtaXNzaW9uR3JhbnRlZHEAfgAFeHBzcgARamF2YS51dGlsLkhhc2hNYXAFB9rBwxZg0QMAAkYACmxvYWRGYWN0b3JJAAl0aHJlc2hvbGR4cD9AAAAAAAAMdwgAAAAQAAAAAXQAKTAwMDgtMzQ1MWU3NjMtZjBiNy00MGQ1LTg5YWYtZjBiZTYyZjZmY2ZlcQB+AA14c3EAfgARP0AAAAAAAAx3CAAAABAAAAAJdAAJYXV0aF9zdGVwdAABMXQAA2FjcnQAFHNpbXBsZV9wYXNzd29yZF9hdXRodAAJcmVtb3RlX2lwdAAPMTA5LjEwNi4xMzQuMTYydAAEb3Bic3QAJGQ1ZTNlN2NiLWJhYjQtNDg2MS1iNTdlLWEyMTcxYWUwZmFiMHQABXNjb3BldAAeb3BlbmlkIHByb2ZpbGUgZW1haWwgdXNlcl9uYW1ldAANcmVzcG9uc2VfdHlwZXQABGNvZGV0AAxyZWRpcmVjdF91cml0AC1odHRwczovL2NiLWRldi5nbHV1Lm9yZy9pZGVudGl0eS9hdXRoY29kZS5odG10AAVub25jZXQABW5vbmNldAAJY2xpZW50X2lkcQB+ABN4dABlYjE1YzcxZWU3MzA3ZDhmYmY5ODliMTEzNTMzNDkwMzgwNGI5MjQ0MDFmNzAxMTBlODMxMTAwMWE3MTdhZmVmZi43OWFhNTZhNS02MWRmLTQxMTItOTIwMy05NzU1YmE2NjNiMzN+cgArb3JnLmdsdXUub3hhdXRoLm1vZGVsLmNvbW1vbi5TZXNzaW9uSWRTdGF0ZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQAD1VOQVVUSEVOVElDQVRFRHB0AAA=",
+  "objectClass": "cache",
+  "del": true,
+  "dn": "uuid=02cd036773175d7c27dca97f830e43eab158c57bef61ea29600ab15b85213469,ou=cache,o=gluu",
+  "exp": "2019-09-19T12:27:25.877",
+  "iat": "2019-09-19T12:25:25.877",
+  "uuid": "02cd036773175d7c27dca97f830e43eab158c57bef61ea29600ab15b85213469"
+}
+```
+In this entry we cache data which is easier to take from cache than find in DB again
+
+We uses key/value to access this data
 
 #### gluu_site
 If you use Cache Refresh, data from the remote database will be imported to this bucket
 
 #### gluu_token
+In gluu_token we also store one type of entries. Here is sample:
+```
+{
+  "scp": "openid user_name email",
+  "nnc": "nonce",
+  "ssnId": "6c111547-ec94-4959-ad71-a3c775c70d2d",
+  "tknCde": "02c3660e0d017efcd126794579afaec9702f92d3b25a6af15657637fa03af9a5",
+  "clnId": "0008-3451e763-f0b7-40d5-89af-f0be62f6fcfe",
+  "grtId": "494f4f0c-0adc-4efc-be97-b89432537b8e",
+  "authzCode": "f75e88ef270e155eb993aad7d964620f52db49b72e81fa593f0178502d993e7e",
+  "objectClass": "token",
+  "usrId": "user762783",
+  "del": true,
+  "dn": "tknCde=02c3660e0d017efcd126794579afaec9702f92d3b25a6af15657637fa03af9a5,ou=tokens,o=gluu",
+  "authnTime": "2019-09-19T10:25:48.812",
+  "attr": {
+    "x5cs256": null
+  },
+  "exp": "2019-09-19T14:25:50.829",
+  "iat": "2019-09-19T10:25:50.829",
+  "grtTyp": "authorization_code",
+  "tknTyp": "refresh_token"
+}
+```
+These tokens which we issue for RP
+
 
 #### gluu_user
 Users and groups will go to this bucket, initially admin user and admin group will be created.
