@@ -110,6 +110,7 @@ Both OpenDJ and Couchbase will be used for storing data. Default data is persist
 By default, the following buckets will be created. If using a hybrid backend, buckets that are unused because their data is stored in LDAP will not be created.
 
 #### gluu
+
 This is the default bucket for the Gluu Server, the following documents will be imported to this bucket:
   - Gluu base settings, oxAuth, oxTrust and configurations for other services
   - scopes
@@ -119,9 +120,13 @@ This is the default bucket for the Gluu Server, the following documents will be 
   - metric (statistic) documents will be inserted to this bucket 
 
 #### gluu_cache
- we use only with cache_type: NATIVE_PERSISTANCE.
 
-Here is sample entry:
+This bucket is used to cache data for easier lookup, rather than searching the database again. The data is accessed with key/value.
+
+This bucket is only used with the NATIVE_PERSISTANCE cache type.
+
+Here is a sample entry:
+
 ```
 {
   "dat": "rO0ABXNyACZvcmcuZ2x1dS5veGF1dGgubW9kZWwuY29tbW9uLlNlc3Npb25JZPy0UHYpOy4WAgAOTAASYXV0aGVudGljYXRpb25UaW1ldAAQTGphdmEvdXRpbC9EYXRlO0wAAmRudAASTGphdmEvbGFuZy9TdHJpbmc7TAACaWRxAH4AAkwAD2ludm9sdmVkQ2xpZW50c3QAMUxvcmcvZ2x1dS9veGF1dGgvbW9kZWwvY29tbW9uL1Nlc3Npb25JZEFjY2Vzc01hcDtMAAVpc0p3dHQAE0xqYXZhL2xhbmcvQm9vbGVhbjtMAANqd3RxAH4AAkwACmxhc3RVc2VkQXRxAH4AAUwAEXBlcm1pc3Npb25HcmFudGVkcQB+AARMABRwZXJtaXNzaW9uR3JhbnRlZE1hcHEAfgADTAARc2Vzc2lvbkF0dHJpYnV0ZXN0AA9MamF2YS91dGlsL01hcDtMAAxzZXNzaW9uU3RhdGVxAH4AAkwABXN0YXRldAAtTG9yZy9nbHV1L294YXV0aC9tb2RlbC9jb21tb24vU2Vzc2lvbklkU3RhdGU7TAAEdXNlcnQAI0xvcmcvZ2x1dS9veGF1dGgvbW9kZWwvY29tbW9uL1VzZXI7TAAGdXNlckRucQB+AAJ4cHNyAA5qYXZhLnV0aWwuRGF0ZWhqgQFLWXQZAwAAeHB3CAAAAW1Je/50eHQAJDE2OTJhYTQ0LTBkYTctNDQ5Yi05NDA1LTllZDlhZDMyZmFhY3EAfgALcHNyABFqYXZhLmxhbmcuQm9vbGVhbs0gcoDVnPruAgABWgAFdmFsdWV4cABwc3EAfgAJdwgAAAFtSXv+dHhwc3IAL29yZy5nbHV1Lm94YXV0aC5tb2RlbC5jb21tb24uU2Vzc2lvbklkQWNjZXNzTWFwea8dEgakD6MCAAFMABFwZXJtaXNzaW9uR3JhbnRlZHEAfgAFeHBzcgARamF2YS51dGlsLkhhc2hNYXAFB9rBwxZg0QMAAkYACmxvYWRGYWN0b3JJAAl0aHJlc2hvbGR4cD9AAAAAAAAMdwgAAAAQAAAAAXQAKTAwMDgtMzQ1MWU3NjMtZjBiNy00MGQ1LTg5YWYtZjBiZTYyZjZmY2ZlcQB+AA14c3EAfgARP0AAAAAAAAx3CAAAABAAAAAJdAAJYXV0aF9zdGVwdAABMXQAA2FjcnQAFHNpbXBsZV9wYXNzd29yZF9hdXRodAAJcmVtb3RlX2lwdAAPMTA5LjEwNi4xMzQuMTYydAAEb3Bic3QAJGQ1ZTNlN2NiLWJhYjQtNDg2MS1iNTdlLWEyMTcxYWUwZmFiMHQABXNjb3BldAAeb3BlbmlkIHByb2ZpbGUgZW1haWwgdXNlcl9uYW1ldAANcmVzcG9uc2VfdHlwZXQABGNvZGV0AAxyZWRpcmVjdF91cml0AC1odHRwczovL2NiLWRldi5nbHV1Lm9yZy9pZGVudGl0eS9hdXRoY29kZS5odG10AAVub25jZXQABW5vbmNldAAJY2xpZW50X2lkcQB+ABN4dABlYjE1YzcxZWU3MzA3ZDhmYmY5ODliMTEzNTMzNDkwMzgwNGI5MjQ0MDFmNzAxMTBlODMxMTAwMWE3MTdhZmVmZi43OWFhNTZhNS02MWRmLTQxMTItOTIwMy05NzU1YmE2NjNiMzN+cgArb3JnLmdsdXUub3hhdXRoLm1vZGVsLmNvbW1vbi5TZXNzaW9uSWRTdGF0ZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQAD1VOQVVUSEVOVElDQVRFRHB0AAA=",
@@ -133,15 +138,13 @@ Here is sample entry:
   "uuid": "02cd036773175d7c27dca97f830e43eab158c57bef61ea29600ab15b85213469"
 }
 ```
-In this entry we cache data which is easier to take from cache than find in DB again
-
-We uses key/value to access this data
 
 #### gluu_site
-If you use Cache Refresh, data from the remote database will be imported to this bucket
+If you use Cache Refresh, data from the remote database will be imported to this bucket.
 
 #### gluu_token
-In gluu_token we also store one type of entries. Here is sample:
+This bucket is used to store tokens issued for the RP. The following is an example:
+
 ```
 {
   "scp": "openid user_name email",
@@ -165,11 +168,10 @@ In gluu_token we also store one type of entries. Here is sample:
   "tknTyp": "refresh_token"
 }
 ```
-These tokens which we issue for RP
-
 
 #### gluu_user
-Users and groups will go to this bucket, initially admin user and admin group will be created.
+
+Users and groups will go to this bucket. By default, the `admin` user and `admin` group are created at setup.
 
 ### Indexes
 
@@ -179,13 +181,13 @@ Indexes are created according to this JSON: [index.json](https://github.com/Gluu
 
 #### Indexes for attributes
 
-Gluu services uses attributes to find the intended documents, so `setup.py` creates indexes for certain attributes. For example, for the **gluu_user** bucket, the following index is created for the **inum** attribute:
+Gluu services use attributes to find the intended documents, so `setup.py` creates indexes for certain attributes. For example, for the **gluu_user** bucket, the following index is created for the **inum** attribute:
 
 ```
 CREATE INDEX gluu_user_inum ON `gluu_user`(`inum`)
 ```
 
-The index name is formed by joining the bucket name and attribute name with an underscore. (e.g. `gluu_user_inum`)
+The index name is formed by joining the bucket name and attribute name with an underscore. (e.g. `gluu_user_inum`).
 
 #### Static Indexes
 For faster retrieval of documents, `setup.py` also creates static indexes if necessary. For example, we have this entry in the **gluu** bucket:
