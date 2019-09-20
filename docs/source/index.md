@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Gluu Server 4.0 supports Couchbase Enterprise Edition (EE) as a database backend. Couchbase can be us as an alternative to LDAP, or in addition to LDAP using the new "hybrid" mode, documented [below](#hybrid-backend).  
+[Gluu Server 4.0](https://gluu.org/docs/ce/4.0) and onward supports Couchbase Enterprise Edition (EE) as a database backend. Couchbase can be used as an alternative to LDAP, or in addition to LDAP using "hybrid" mode as documented [below](#hybrid-backend).  
 
 ## Installation
 
