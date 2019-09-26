@@ -2,15 +2,15 @@
 
 ## Overview
 
-[Gluu Server 4.0](https://gluu.org/docs/ce/4.0) and onward supports Couchbase Enterprise Edition (EE) as a database backend. Couchbase can be used as an alternative to LDAP, or in addition to LDAP using "hybrid" mode as documented [below](#hybrid-backend).  
+[Gluu Server 4.0](https://gluu.org/docs/ce/4.0) and onward supports Couchbase Enterprise Edition (EE) as a database backend. Couchbase can be used as an alternative to LDAP, or in addition to LDAP using "hybrid" mode (as documented [below](#hybrid-backend)).  
 
 ## Installation
 
 There are two supported deployment strategies: 
 
-- [Local Couchbase installation](#local-installation), where both Gluu and Couchbase are residing on the same servers. OK for basic testing. 
+- [Local Couchbase installation](#local-installation), where both Gluu and Couchbase are residing on the same servers. This is OK for basic testing. 
 
-- [Remote Couchbase installation](#remote-installation), where Couchbase is on its own dedicated servers. Recommended for performance testing and production scenarios. 
+- [Remote Couchbase installation](#remote-installation), where Couchbase is on its own dedicated servers. This is recommended for performance testing and production. 
 
 ### Local installation
 
@@ -21,7 +21,7 @@ To install a Gluu Server with a local instance of Couchbase:
  - Start the `gluu-server` service and log in to the Gluu Server chroot
  - Download your preferred [Couchbase package](https://www.couchbase.com/downloads) and save it inside your Gluu Server chroot to `/opt/dist/couchbase`.
  - Run `setup.py` to configure the Gluu Server.
- - When prompted to choose a backend, you'll see the options below. Select Option 2 to use Couchbase:
+ - When prompted to choose a backend, select Option 2 for Couchbase:
  
     ```
     Install (1) Gluu OpenDj (2) Couchbase (3) Hybrid [1|2|3]
