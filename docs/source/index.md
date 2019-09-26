@@ -73,7 +73,7 @@ To leverage a remote Couchbase cluster, follow these instructions.
     - **Couchbase host**: The IP address previously set for Couchbase 
     - **Couchbase Admin user**: The Admin username to log in to Couchbase
     - **Couchbase Admin password**: The password to log in to Couchbase - **this is also set to be the oxTrust admin password**
-    - **Use hybrid backends**: Set this to `yes` to install a local OpenDJ backend, enabling a hybrid configuration
+    - **Use hybrid backends**: If you'd like to leverage a "hybrid" backend with Couchbase *and* OpenDJ, select `yes`
     
 ### Test
 
