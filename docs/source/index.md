@@ -32,8 +32,7 @@ To install a Gluu Server with a local instance of Couchbase:
 To leverage a remote Couchbase cluster, follow these instructions. 
 
 #### Install and configure Couchbase
-
-- Prepare a VM with 16GB physical memory and 4 core CPU 
+ 
 - [Install Couchbase](https://docs.couchbase.com/server/current/install/get-started.html)
 - Modify the VM firewalls according to [Couchbase requirements](https://docs.couchbase.com/server/current/install/install-ports.html)
 - Configure your Couchbase deployment. Here are couple of screenshots attached from our test setup. 
