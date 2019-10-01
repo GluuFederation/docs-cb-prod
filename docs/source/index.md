@@ -207,7 +207,7 @@ The index name is "`<bucket_name>_st_#`" where `#` is a consecutive number.
 
 Please be aware of the following behaviors that developers should account for when executing SCIM searches with Couchbase as the DB: 
  
-- Non-deterministic order of results when `sortBy` is *not* specified: A query can return a different permutation of valid results each time the search is executed.
+- Non-deterministic order of results: When `sortBy` is *not* specified, a query can return a different permutation of valid results each time the search is executed.
 
 - Search filters should not contain backslash characters in comparison values: This is a Couchbase issue. N1QL queries with backslashes can lead to unexpected results or even runtime errors. An example of this is the filter `name.familyName co "\"`. 
 
