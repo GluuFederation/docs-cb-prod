@@ -209,9 +209,9 @@ Please be aware of the following behaviors that developers should account for wh
  
 - Non-deterministic order of results: When `sortBy` is *not* specified, a query can return a different permutation of valid results each time the search is executed.
 
-- Search filters should not contain backslash characters in comparison values: This is a Couchbase issue. N1QL queries with backslashes can lead to unexpected results or even runtime errors. An example of this is the filter `name.familyName co "\"`. 
+- Search filters should *not* contain backslash characters in comparison values: This is a Couchbase issue. N1QL queries with backslashes can lead to unexpected results or even runtime errors. An example is the filter `name.familyName co "\"`. 
 
-- Case sensitivity: In LDAP, searching and sorting is case sensitive by default. In Couchbase, the behavior is case sensitive with the exception of equality/inequality filters, like `userName eq "JhonHoney"` or `userType ne "Employee"`. Remember that case only matters for attributes of type string. This applies for both core and custom attributes.
+- Case sensitivity: In LDAP, searching and sorting is case sensitive by default. In Couchbase, the behavior is case sensitive with the exception of equality/inequality filters like `userName eq "JhonHoney"` or `userType ne "Employee"`. Remember that case only matters for attributes of type string. This applies for both core and custom attributes.
 
 - Operators (`le`, `lt`, `gt`, `ge`, `co`, `ew`, `sw`, `eq`) are *not* applicable for attributes with more than one value. When used, no results will be returned. For example, users with more than one telephone number will not be returned when using `phoneNumbers.value sw "555"`, even if one or more of their phones start with "555".
 
