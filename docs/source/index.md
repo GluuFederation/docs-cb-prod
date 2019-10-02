@@ -4,10 +4,6 @@
 
 [Gluu Server 4.0](https://gluu.org/docs/ce/4.0) and onward supports Couchbase Enterprise Edition (EE) as a database backend. Couchbase can be used as an alternative to LDAP, or in addition to LDAP using "hybrid" mode (as documented [below](#hybrid-backend)).  
 
-## Pre-requirements
-
-- A production-grade clustered deployment of Couchbase requires *at least* three dedicated nodes. 
-
 ## Installation
 
 There are two supported deployment strategies: 
@@ -15,6 +11,10 @@ There are two supported deployment strategies:
 - [Local Couchbase installation](#local-installation), where both Gluu and Couchbase reside on the same server. OK for basic testing. 
 
 - [Remote Couchbase installation](#remote-installation), where Couchbase is on its own dedicated servers. Recommended for performance testing. Required for production. 
+
+### Pre-requirements
+
+- A production-grade clustered deployment of Couchbase requires *at least* three dedicated nodes. 
 
 ### Local installation
 
