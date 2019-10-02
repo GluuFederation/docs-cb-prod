@@ -4,13 +4,17 @@
 
 [Gluu Server 4.0](https://gluu.org/docs/ce/4.0) and onward supports Couchbase Enterprise Edition (EE) as a database backend. Couchbase can be used as an alternative to LDAP, or in addition to LDAP using "hybrid" mode (as documented [below](#hybrid-backend)).  
 
+## Pre-requirements
+
+- A production-grade clustered deployment of Couchbase requires *at least* three dedicated nodes. 
+
 ## Installation
 
 There are two supported deployment strategies: 
 
-- [Local Couchbase installation](#local-installation), where both Gluu and Couchbase are residing on the same servers. This is OK for basic testing. 
+- [Local Couchbase installation](#local-installation), where both Gluu and Couchbase reside on the same server. OK for basic testing. 
 
-- [Remote Couchbase installation](#remote-installation), where Couchbase is on its own dedicated servers. This is recommended for performance testing and production. 
+- [Remote Couchbase installation](#remote-installation), where Couchbase is on its own dedicated servers. Recommended for performance testing. Required for production. 
 
 ### Local installation
 
@@ -33,8 +37,12 @@ To leverage a remote Couchbase cluster, follow these instructions.
 
 #### Install and configure Couchbase
  
-- [Install Couchbase](https://docs.couchbase.com/server/current/install/get-started.html)
-- Modify the VM firewalls according to [Couchbase requirements](https://docs.couchbase.com/server/current/install/install-ports.html)
+- Install Couchbase. [Read the docs](https://docs.couchbase.com/server/current/install/get-started.html)
+
+!!! Attention
+    A production-grade clustered deployment of Couchbase requires *at least* three dedicated nodes. 
+
+- Modify firewalls according to Couchbase requirements. [Read the docs](https://docs.couchbase.com/server/current/install/install-ports.html)
 - Configure your Couchbase deployment. Here are couple of screenshots attached from our test setup. 
 
     ![image](./img/CB_remote_one.PNG)
