@@ -78,7 +78,7 @@ To leverage a remote Couchbase cluster, follow these instructions.
     
 - The setup script will add some Couchbase-specific fields to the normal [setup script prompts](https://gluu.org/docs/ce/4.0/installation-guide/setup_py/#setup-prompt):
 
-    - **Couchbase host**: The IP address previously set for Couchbase 
+    - **Couchbase hosts**: Enter the IP address or hostname for your Couchbase nodes. One is required. Three is recommended. Separate entries with commas, e.g. `node1.example.com,node2.example.com,node3.example.com` 
     - **Couchbase Admin user**: The Admin username to log in to Couchbase
     - **Couchbase Admin password**: The password to log in to Couchbase - **this is also set to be the oxTrust admin password**
     - **Use hybrid backends**: If you'd like to leverage a "hybrid" backend with Couchbase *and* OpenDJ, select `yes`
