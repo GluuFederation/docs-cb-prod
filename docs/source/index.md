@@ -23,11 +23,11 @@ There are two supported deployment strategies:
 
 To install a Gluu Server with a local instance of Couchbase: 
 
- - Prepare a VM with 16GB of RAM, 4 CPU cores, and 40 GB of disk space. 
- - Install the [Gluu Server 4.0](https://gluu.org/docs/ce/4.0/installation-guide/install/) packages, don't run `setup.py` yet. 
- - Start the `gluu-server` service and log in to the Gluu Server chroot
- - Download your preferred [Couchbase package](https://www.couchbase.com/downloads) and save it inside your Gluu Server chroot to `/opt/dist/couchbase`.
- - Run `setup.py` to configure the Gluu Server.
+ - Prepare a VM with 16GB of RAM, 4 CPU cores, and 40 GB of disk space.  
+ - Install the [Gluu Server 4.0](https://gluu.org/docs/ce/4.0/installation-guide/install/) packages, don't run `setup.py` yet.  
+ - Start the `gluu-server` service and log in to the Gluu Server chroot  
+ - Download your preferred [Couchbase package](https://www.couchbase.com/downloads) and save it inside your Gluu Server chroot to `/opt/dist/couchbase`.  
+ - Run `setup.py` to configure the Gluu Server.  
  - When prompted to choose a backend, select Option 2 for Couchbase:
  
     ```
@@ -122,12 +122,13 @@ By default, the following buckets will be created. If using a hybrid backend, bu
 #### gluu
 
 This is the default bucket for the Gluu Server, the following documents will be imported to this bucket:
-  - Gluu base settings, oxAuth, oxTrust and configurations for other services
-  - scopes
-  - scripts
-  - SCIM/SAML/Passport/RADIUS related documents
-  - clients
-  - metric (statistic) documents will be inserted to this bucket 
+
+  - Gluu base settings, oxAuth, oxTrust and configurations for other services  
+  - scopes  
+  - scripts  
+  - SCIM/SAML/Passport/RADIUS related documents  
+  - clients  
+  - metric (statistic) documents will be inserted to this bucket   
 
 #### gluu_cache
 
