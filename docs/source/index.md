@@ -9,11 +9,13 @@
 
 ## Installation
 
-There are two supported deployment strategies: 
+There are three supported deployment strategies: 
 
-- [Local Couchbase installation](#local-installation), where both Gluu and Couchbase reside on the same server. OK for basic testing. 
+- [Local Couchbase installation for community edition Gluu](#local-installation), where both Gluu and Couchbase reside on the same server. OK for basic testing. 
 
-- [Remote Couchbase installation](#remote-installation), where Couchbase is on its own dedicated servers. Recommended for performance testing. Required for production. 
+- [Remote VM Couchbase installation for community edition Gluu](#remote-installation), where Couchbase is on its own dedicated servers. Recommended for performance testing. Required for production. 
+
+- [Kubernetes Couchbase installation](#kubernetes-installation), where Couchbase is installed on a kubernetes cluster in its own namespace. Recommended for performance testing. Required for production. 
 
 ### Pre-requirements
 
@@ -52,7 +54,7 @@ To leverage a remote Couchbase cluster, follow these instructions.
 
     ![image](./img/CB_remote_two.PNG)
 
-#### Install and configure Gluu
+#### Install and configure Gluu on VM
 
 - Install [Gluu Server 4.0](https://gluu.org/docs/ce/4.0/installation-guide/install/), but **do not** run `setup.py` yet. 
 - After package installation, run these commands: 
@@ -85,7 +87,55 @@ To leverage a remote Couchbase cluster, follow these instructions.
     - **Couchbase Admin user**: The Admin username to log in to Couchbase
     - **Couchbase Admin password**: The password to log in to Couchbase - **this is also set to be the oxTrust admin password**
     - **Use hybrid backends**: If you'd like to leverage a "hybrid" backend with Couchbase *and* OpenDJ, select `yes`
+
+### Kubernetes Installation
+
+!!! Attention
+    Only installation of Couchbase on AWS EKS cluster installation is currently supported with Gluu.
     
+#### Requirments
+
+-  A minimum of 3 m5.xlarge nodes on an EKS cluster.
+
+#### Install and configure Couchbase and Gluu
+
+- Get the source code:
+
+    ```tab="Ubuntu 18, RHEL 7, Debian 9, or CentOS 7"
+    wget -q https://github.com/GluuFederation/enterprise-edition/archive/4.0.0.zip
+    unzip 4.0.0.zip
+    cd enterprise-edition-4.0.0/examples/kubernetes
+    ```
+    
+- [Install couchbase enterprise kubernetes](https://www.couchbase.com/downloads) , choose the kuberentes tab , linux distribution and place the tar.gz file inside the same directory as the `enterprise-edition-4.0.0/examples/kubernetes/create.sh`.
+
+- Please modify the file `enterprise-edition-4.0.0/examples/kubernetes/couchbase/couchbase-cluster.yaml` to fit your instituional needs. Currently the file is setup with an example setup of a total of 6 nodes as seen in `spec.servers`. Each set of services is replicating in two different zones. According to your setup these zones might be different and hence should be changed. Do not change the labels of these services such as `couchbase_services: index` the setup requires these labels to track the status of the couchbase setup.Do not change the buckets as they are required for Gluu setup. More information on the properties of this file is found [here](https://docs.couchbase.com/operator/1.2/couchbase-cluster-config.html). 
+
+!!! Attention
+     Please note the `enterprise-edition-4.0.0/examples/kubernetes/couchbase/couchbase-cluster.yaml` file must include at least three defined `spec.servers` with the labels `couchbase_services: index`, `couchbase_services: data` and `couchbase_services: analytics`
+    
+**If you wish to get started fast just change the values of `spec.servers.name` and `spec.servers.serverGroups` inside `couchbase/couchbase-cluster.yaml` to the zones of your EKS nodes and continue.**
+
+- Run `bash create.sh` and follow the prompts to install couchbase soley with Gluu.
+
+- The `enterprise-edition-4.0.0/examples/kubernetes/couchbase/couchbase-cluster.yaml` file has a property called `exposedFeatureServiceType` set in our file to `NodePort`. This can be changed to deploy a [`Loadbalancer`](https://docs.couchbase.com/operator/1.2/couchbase-cluster-config.html#adminconsoleservicetype) but requires a `dns` value to be added to `enterprise-edition-4.0.0/examples/kubernetes/couchbase/couchbase-cluster.yaml`.
+
+- To access the couchbase ui please follow these [instructions](https://docs.couchbase.com/operator/1.2/accessing-couchbase.html).
+
+#### Hybrid backend
+
+If both Couchbase and OpenDJ are goingto be installed, during setup you can choose Option 2 to support a "hybrid" backend database infrastructure for your Gluu Server:
+
+```tab="Ubuntu 18, RHEL 7, Debian 9, or CentOS 7"
+|-----------------------------------------------------------------|
+|                     Persistence layer                           |
+|-----------------------------------------------------------------|
+| [0] WrenDS [default]                                            |
+| [1] Couchbase [Testing Phase]                                   |
+| [2] Hybrid(WrenDS + Couchbase)[Testing Phase]                   |
+|-----------------------------------------------------------------|
+```
+
 ### Test
 
 - Test WebUI login
