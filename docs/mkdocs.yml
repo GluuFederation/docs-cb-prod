@@ -34,3 +34,4 @@ markdown_extensions:
 # Navigation
 nav:
 - 'Home' : 'index.md'
+- 'FAQ' : 'faq.md'
