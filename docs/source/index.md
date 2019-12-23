@@ -279,4 +279,4 @@ Please be aware of the following behaviors that developers should account for wh
 
 ## License
 
-Couchbase Enterprise Edition, and the corresponding integration with Gluu, is commercially licensed software. To discuss licensing, please [schedule a call with us](https://gluu.org/booking). 
+[Couchbase](https://www.couchbase.com/) Enterprise Edition is commercially licensed software. Gluu's code to integrate Couchbase EE as a backend for the Gluu Server is made available under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
